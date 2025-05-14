@@ -13,8 +13,14 @@ $ npm install
 ```
 
 
+<<<<<<< HEAD
+=======
+```bash
+https://github.com/tilak7606/society-management.git
+```
+>>>>>>> fcd3449 (changes done)
 ## Compile and run the project
-
+git 
 ```bash
 # development
 $ npm run dev
