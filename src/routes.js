@@ -1,7 +1,8 @@
 import React from "react";
 
 // Admin Imports
-import MainDashboard from "views/admin/default";
+// import MainDashboard from "views/admin/default";
+import Dashboard from "views/admin/default";
 
 // Auth Imports
 import SignIn from "views/auth/SignIn";
@@ -25,7 +26,7 @@ const routes = [
     layout: "/admin",
     path: "",
     icon: <MdHome className="h-6 w-6" />,
-    component: <MainDashboard />,
+    component: <Dashboard />,
   },
  
 ];

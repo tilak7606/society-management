@@ -1,20 +1,16 @@
-import MiniCalendar from "components/calendar/MiniCalendar";
-import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
+
 import TotalSpent from "views/admin/default/components/TotalSpent";
 import PieChartCard from "views/admin/default/components/PieChartCard";
 import { MdBarChart, MdDashboard } from "react-icons/md";
 
-import { columnsDataCheck, columnsDataComplex } from "./variables/columnsData";
+import { columnsDataComplex } from "./variables/columnsData";
 import { GiTakeMyMoney } from "react-icons/gi";
 import { MdOutlineMapsHomeWork } from "react-icons/md";
 import { FaCarAlt } from "react-icons/fa";
 
 import Widget from "components/widget/Widget";
-import CheckTable from "views/admin/default/components/CheckTable";
 import ComplexTable from "views/admin/default/components/ComplexTable";
 import DailyTraffic from "views/admin/default/components/DailyTraffic";
-import TaskCard from "views/admin/default/components/TaskCard";
-import tableDataCheck from "./variables/tableDataCheck.json";
 import tableDataComplex from "./variables/tableDataComplex.json";
 
 import Slider from "react-slick"; // Import the slider component
@@ -22,7 +18,27 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Project from "../profile/components/Project";
 
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+
 const Dashboard = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  function access(){
+ 
+  const { email = "", password = ""} = location.state || {};
+
+  if(email === "" || password === "") {
+    navigate('/');
+  }
+
+}
+
+useEffect(()=>{
+  access();
+},[]);
+
   const settings = {
     dots: true,
     infinite: true,

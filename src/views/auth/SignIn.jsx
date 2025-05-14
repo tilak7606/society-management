@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TEInput, TERipple } from "tw-elements-react";
 import { useNavigate } from "react-router-dom";
 
@@ -15,12 +15,23 @@ export default function SignIn() {
   function handelLogin (e) {
     e.preventDefault();
     if(email === adminEmail && password === adminPassword){
-      navigate('/admin');
+      navigate('/admin',{
+         state: { email, password },
+      });
     }
     else{
       alert("UserName or Password is incorrect");
     }
+
+    setEmail("");
+    setPassword("");
   }
+
+
+  // useEffect(()=>{
+  //   setEmail("");
+  //   setPassword("");
+  // },[]);
 
 
   return (
